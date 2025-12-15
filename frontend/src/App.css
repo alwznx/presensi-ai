@@ -1,0 +1,186 @@
+/* Reset & Base */
+:root {
+  --primary: #4f46e5;
+  --primary-hover: #4338ca;
+  --secondary: #64748b;
+  --success: #10b981;
+  --danger: #ef4444;
+  --bg-color: #f8fafc;
+  --card-bg: #ffffff;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  background-color: var(--bg-color);
+  color: #1e293b;
+}
+
+/* Container */
+.app-container {
+  width: 100%;
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+/* Header */
+.header { text-align: center; margin-bottom: 30px; }
+.header h1 { color: var(--primary); font-size: 2.2rem; margin: 0; }
+.header p { color: var(--secondary); margin-top: 5px; }
+
+/* NAVIGASI UTAMA */
+.nav-main {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 30px;
+  background: white;
+  padding: 10px;
+  border-radius: 50px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.btn-nav {
+  border: none;
+  background: transparent;
+  padding: 10px 25px;
+  border-radius: 30px;
+  font-weight: bold;
+  color: #64748b;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.btn-nav.active {
+  background: var(--primary);
+  color: white;
+  box-shadow: 0 4px 10px rgba(79, 70, 229, 0.3);
+}
+
+/* CONTENT CARD */
+.main-card {
+  background: white;
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+  text-align: center;
+}
+
+/* TABS MODE (Upload/Kamera) */
+.tabs { display: flex; justify-content: center; gap: 10px; margin-bottom: 20px; }
+.btn-tab {
+  padding: 8px 20px;
+  border-radius: 20px;
+  border: 1px solid #ddd;
+  background: white;
+  cursor: pointer;
+  color: #64748b;
+}
+.btn-tab.active {
+  background: #eee;
+  border-color: #ccc;
+  color: #333;
+  font-weight: bold;
+}
+
+/* MODE ABSENSI & KAMERA */
+.upload-area {
+  border: 3px dashed #cbd5e1;
+  border-radius: 15px;
+  padding: 40px;
+  cursor: pointer;
+  background: #f8fafc;
+  display: block;
+}
+.upload-area:hover { border-color: var(--primary); background: #eff6ff; }
+
+.camera-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.camera-container {
+  background: black;
+  border-radius: 15px;
+  overflow: hidden;
+  max-width: 600px;
+  width: 100%;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.video-feed { width: 100%; display: block; transform: scaleX(-1); }
+
+/* RESULT ABSENSI */
+.result-section { margin-top: 30px; border-top: 2px solid #f1f5f9; padding-top: 20px; }
+.result-image-container { text-align: center; margin: 20px 0; }
+.preview-img { max-width: 100%; border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
+
+.result-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.face-card {
+  background: white;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  border: 1px solid #eee;
+  text-align: center; /* NAMA DI TENGAH */
+}
+
+.face-card h3 { margin: 0 0 5px 0; font-size: 1rem; color: #1e293b; }
+
+.face-card.known { border-top: 5px solid var(--success); background: #ecfdf5; }
+.face-card.unknown { border-top: 5px solid var(--danger); background: #fef2f2; }
+
+/* TABEL ADMIN */
+.admin-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; text-align: left; }
+.admin-card { background: #f8fafc; padding: 20px; border-radius: 15px; border: 1px solid #e2e8f0; }
+.table-wrapper { overflow-x: auto; }
+table { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
+th, td { padding: 12px; border-bottom: 1px solid #e2e8f0; text-align: left; }
+th { color: #64748b; font-weight: 600; }
+.tag-hadir { background: #dcfce7; color: #166534; padding: 3px 10px; border-radius: 20px; font-size: 0.8rem; font-weight: bold; }
+
+/* FORM TAMBAH WAJAH */
+.input-group { margin-bottom: 15px; }
+.input-group label { display: block; margin-bottom: 5px; font-weight: 600; font-size: 0.9rem; }
+.input-field { width: 100%; padding: 10px; border: 1px solid #cbd5e1; border-radius: 8px; }
+
+/* BUTTONS */
+.btn-primary {
+  background: var(--primary);
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 10px;
+  font-weight: bold;
+  cursor: pointer;
+  width: 100%;
+  transition: 0.2s;
+}
+.btn-primary:hover { background: #4338ca; }
+.btn-primary:disabled { background: #94a3b8; cursor: not-allowed; }
+
+.btn-text {
+  background: none;
+  border: none;
+  color: var(--danger);
+  text-decoration: underline;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+@media (max-width: 768px) { .admin-grid { grid-template-columns: 1fr; } }
